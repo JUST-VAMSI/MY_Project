@@ -1,0 +1,12 @@
+<FilesMatch "\.(sql|zip)$">
+  Order Allow,Deny
+  Deny from all
+</FilesMatch>
+
+
+RedirectMatch 404 /\.git
+
+
+
+ErrorDocument 404 /My_project/404.html
+ErrorDocument 500 /My_project/500.html
