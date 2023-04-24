@@ -138,7 +138,7 @@ input[type="checkbox"],input[type="radio"]{
     </head>
 <body class="text-center">
     <h1 class="start">PRODUCT INSERT FORM</h1>
-    <form  action="test.php" method="post" class="text-center">
+    <form  action="productinsert-code.php" method="post" class="text-center" encytype="multipart/form-data">
         <div class="container">
             <h1 class="end">PRODUCT INSERT FORM</h1>
             <div class="row">
@@ -186,7 +186,7 @@ input[type="checkbox"],input[type="radio"]{
                     <pre class="hide">IMAGE:</pre> 
                 </div>
                 <div class="col-lg-6 col-sm-12">
-                    <input type="file" name="pimg" class="" placeholder="IMG">
+                    <input type="file" name="pimg" class="" placeholder="IMG" accept=".jpg,.png,.jpeg">
                 </div>
             </div>
             <div class="row">
@@ -246,6 +246,6 @@ input[type="checkbox"],input[type="radio"]{
 <?php
 }
 else{
-    echo 'your are not eligible to open this page';
+    echo 'you dont have access to open this page';
 }
 ?>

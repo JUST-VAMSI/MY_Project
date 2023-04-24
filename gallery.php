@@ -109,7 +109,7 @@ body{
         </head>
         <body class="text-center">
             <h1 class="start">Gallery Form</h1>
-            <form action="gallerycheck.php" method="post" class="text-center" style="padding-top:20px;" class="form-control form-control-sm" >
+            <form action="gallerycheck.php" method="post" class="text-center" style="padding-top:20px;" class="form-control form-control-sm" enctype="multipart/form-data">
                 <div class="container">
                     <h1 class="end">Gallery Form</h1>
                     <div class="row">
