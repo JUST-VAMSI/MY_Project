@@ -17,7 +17,7 @@ session_start();
         while($row=mysqli_fetch_assoc($result))
         {
             
-            if(($row['email']==$_POST['logname']) && ($row['pass']==md5($_POST['logpass'])))
+            if(($row['email']==$_POST['logname']) && ($row['passw']==md5($_POST['logpass'])))
             {
                     $_SESSION['admin']=$_POST['logname'];
                     $v=1;
