@@ -26,10 +26,10 @@ session_start();
         }
         if($v==1)
         {
-          header("Location: index.php");
+          header("Location: dashboard.php");
         }
         else{
-          header("Location: login.php?che='please check your email and password'");
+          header("Location: index.php?che='please check your email and password'");
         }
         mysqli_close($conn);
     }
