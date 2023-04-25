@@ -10,7 +10,7 @@ session_start();
 
     if(isset($_POST['siva']))
     {
-        $sql="SELECT * FROM `detail`";
+        $sql="SELECT * FROM `admin`";
         $result=mysqli_query($conn,$sql);
         
         $v=0;
@@ -19,7 +19,7 @@ session_start();
             
             if(($row['email']==$_POST['logname']) && ($row['pass']==md5($_POST['logpass'])))
             {
-                    $_SESSION['uname']=$_POST['logname'];
+                    $_SESSION['admin']=$_POST['logname'];
                     $v=1;
             }
             
