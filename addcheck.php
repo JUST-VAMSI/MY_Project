@@ -12,6 +12,15 @@ if(isset($_POST['add_address']) && isset($_SESSION['uname']))
     $state=$_POST['state'];
     $house=$_POST['house'];
     $road=$_POST['road'];
+
+    $fname=mysqli_real_escape_string($fname);
+    $mnumber=mysqli_real_escape_string($mnumber);
+    $gender=mysqli_real_escape_string($gender);
+    $pin=mysqli_real_escape_string($pin);
+    $state=mysqli_real_escape_string($state);
+    $house=mysqli_real_escape_string($house);
+    $road=mysqli_real_escape_string($road);
+    
     $chk=0;
     $edt="SELECT * FROM add_address";
     $edres=mysqli_query($conn,$edt);

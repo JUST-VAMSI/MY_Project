@@ -1,11 +1,12 @@
 <?php
     //  $connect=mysqli_connect("localhost","id20241156_root","Furniture@2662","id20241156_allinone");
-    include("bd_conf.php");
+    include("db_conf.php");
+    session_start();
      if(!$conn)
      {
         die("connection failed: ".mysqli_connect_error());
      }
-     if(isset($_POST['pinsert']))
+     if(isset($_POST['pinsert']) && isset($_SESSION['admin']))
      {
         $proid=$_POST['pid'];
         $proname=$_POST['pname'];
@@ -40,7 +41,7 @@
             $img_type=pathinfo('$pimg',PATHINFO_EXTENSION);
             $img_type_lc=strtolower($img_type);
             $new_img_name=uniqid("img-",true).".".$img_type_lc;
-            move_uploaded_file($tmpname,"products/".$new_img_name);
+            move_uploaded_file($tmpname,"uploads/".$new_img_name);
             if($error==0)
             {
                 $sql="INSERT INTO Products(proid,proname,promrp,proprice,proqty,proimg,prosdes,prodes,promtitle,promdes,promkeywords)

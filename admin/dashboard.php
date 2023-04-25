@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("db_conf.php");
-if(isset($_GET['admin']))
+if(isset($_SESSION['admin']))
 {
 
  ?>
@@ -24,7 +24,7 @@ if(isset($_GET['admin']))
             margin:20%;
         }
         .col-lg-9{
-            height:600px;
+            height:720px;
             overflow:scroll;
         }
         .col-lg-3{
@@ -77,7 +77,6 @@ if(isset($_GET['admin']))
             </div>
             <div class="col-sm-12 col-xs-12 col-lg-9 bg-light">
             <?php
-session_start();
 $check=1;
 // $conn=mysqli_connect("localhost","id20241156_root","Furniture@2662","id20241156_allinone");
 include("db_conf.php");
@@ -475,7 +474,49 @@ body{
         </tr>
                 </div>
             </form> 
- 
+            <table class="mt-4" align="center">
+    <tr>
+        <th>Gallery no</th>
+        <th>Gallery name</th>
+</tr>
+    <?php 
+    $prod="SELECT sno,gname FROM gallery";
+    $prores=mysqli_query($conn,$prod);
+    if($prores->num_rows>0)
+    {
+        while($row=mysqli_fetch_assoc($prores))
+        {?>
+        <tr>
+        <td><?php echo $row['sno']  ?></td>
+        <td><?php echo $row['gname']  ?></td>
+        </tr>
+        <?php
+        }
+    }
+    ?>
+  </table>
+  <table class="mt-4" align="center" id="regdetails">
+    <h2 style="margin-top:10%;">Details</h2>
+    <tr>
+        <th>sno</th>
+        <th>Email</th>
+</tr>
+    <?php 
+    $prod="SELECT sno,email FROM detail";
+    $prores=mysqli_query($conn,$prod);
+    if($prores->num_rows>0)
+    {
+        while($row=mysqli_fetch_assoc($prores))
+        {?>
+        <tr>
+        <td><?php echo $row['sno']  ?></td>
+        <td><?php echo $row['email']  ?></td>
+        </tr>
+        <?php
+        }
+    }
+    ?>
+  </table>
         </body>
     </html>
 
@@ -483,7 +524,7 @@ body{
 }
 else
 {
-    echo 'Your dont have access to open this page';
+    echo 'You dont have access to open this page';
 }
 ?>
             </div>

@@ -316,7 +316,7 @@ elseif(!isset($_SESSION['uname']))
             
                 <div class="col-sm-6 col-lg-4 text-center product">
                 <a href="product.php?prod=<?=$row['proname'] ?>">
-                <img src="<?php echo $row['proimg']?>" alt="..." height="300px" width="250px" style="border-radius:8px;">
+                <img src="uploads/<?php echo $row['proimg']?>" alt="..." height="300px" width="250px" style="border-radius:8px;">
                 <h6 class="card-title" name="pname"><?php echo $row['proname']?></h6>
                   <p class="card-text">RS.<?php echo $row['proprice']?></p>
                     <button class="btn btn-warning m-2">BUY NOW</button>
@@ -340,7 +340,7 @@ elseif(!isset($_SESSION['uname']))
     ?>
       <div class="swiper-slide">
         <div>
-          <img src="<?php echo $row['gimg']?>" alt="">
+          <img src="gallery/<?php echo $row['gimg']?>" alt="">
           <h1><?php echo $row['gname'] ?></h1>
           <i class="bi bi-star-fill text-primary"></i>
           <i class="bi bi-star-fill text-primary"></i>
