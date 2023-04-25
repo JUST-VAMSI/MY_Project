@@ -9,7 +9,7 @@ if(!$conn)
 }
 if(isset($_POST['vamsi']))
 {
-    $password=$_POST['pass'];
+    $password=md5($_POST['pass']);
     $email_name=$_POST['Emailname'];
     $emailcheck="SELECT email FROM detail WHERE email='$email_name'";
     $emailres=mysqli_query($conn,$emailcheck);
