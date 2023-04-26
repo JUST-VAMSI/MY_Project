@@ -18,7 +18,7 @@
         $promtitle=$_POST['pmtitle'];
         $promdes=$_POST['pmdes'];
         $promkeywords=$_POST['pmkeywords'];
-        $proimg=$_FILES['pimg']['name']
+        $proimg=$_FILES['pimg']['name'];
 
         $proid=mysqli_real_escape_string($conn,$proid);
         $proname=mysqli_real_escape_string($conn,$proname);
@@ -52,7 +52,10 @@
                     $result=mysqli_query($conn,$sql_query);
                     while($row=mysqli_fetch_assoc($result))
                     {
-                        echo "$row[proid]";
+                        echo "<script>
+                        alert('product uploaded successfully');
+                        document.location.href='dashboard.php';
+                        </script>";
                     }
                 }
                 else

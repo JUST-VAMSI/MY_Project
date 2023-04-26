@@ -27,7 +27,10 @@ if(isset($_POST['gsub']) && isset($_SESSION['admin']))
         $r=mysqli_query($conn,$q);
         if($r)
         {
-            header("Location: dashboard.php");
+            echo "<script>
+                        alert('Gallery uploaded successfully');
+                        document.location.href='dashboard.php';
+                        </script>";
         }
         else{
             echo 'fail';
