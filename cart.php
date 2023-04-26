@@ -4,9 +4,10 @@ session_start();
 include('db_conf.php');
 if(isset($_GET['car']) && isset($_SESSION['uname']))
 {
+    $user=$_SESSION['uname'];
     $s="SELECT * FROM `products`";
     $result=mysqli_query($conn,$s);
-    $n="SELECT * FROM `add_address`";
+    $n="SELECT * FROM `add_address` WHERE email='$user'";
     $res=mysqli_query($conn,$n);
     while($row=mysqli_fetch_assoc($result))
     {
@@ -32,12 +33,19 @@ if(isset($_GET['car']) && isset($_SESSION['uname']))
                 $pmrp=$row['promrp'];
                 $pprice=$row['proprice'];
                 $check=$_SESSION['uname'];
+
+                $pi=mysqli_real_escape_string($conn,$pi);
+                $psdes=mysqli_real_escape_string($conn,$psdes);
+                $pmrp=mysqli_real_escape_string($conn,$pmrp);
+                $pprice=mysqli_real_escape_string($conn,$pprice);
+                $check=mysqli_real_escape_string($conn,$check);
+
                 while($r=mysqli_fetch_assoc($res))
                 {
                     if($r['email']==$check)
                     {
                         $v=$r['email'];
-                        $qu="INSERT INTO `cart` VALUES('$v','$pn','$pi','$psdes','$pmrp','$pprice')";
+                        $qu="INSERT INTO `cart`(`email`,`proname`,`proimg`,`prodes`,`promrp`,`proprice`) VALUES('$v','$pn','$pi','$psdes','$pmrp','$pprice')";
 
                         if(mysqli_query($conn,$qu))
                         {
