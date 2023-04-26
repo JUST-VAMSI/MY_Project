@@ -31,17 +31,17 @@
         $promdes=mysqli_real_escape_string($conn,$promdes);
         $promkeywords=mysqli_real_escape_string($conn,$promkeywords);
 
-
+       
         $filetype=$_FILES['pimg']['type'];
         $error=$_FILES['pimg']['error'];
         $tmpname=$_FILES['pimg']['tmp_name'];
-        $allowed_types=array("pimg/jpeg","pimg/jpg","pimg/png");
+        $allowed_types=array("image/jpeg","image/jpg","image/png");
         if(in_array($filetype,$allowed_types))
         {
-            $img_type=pathinfo('$pimg',PATHINFO_EXTENSION);
+            $img_type=pathinfo($proimg,PATHINFO_EXTENSION);
             $img_type_lc=strtolower($img_type);
             $new_img_name=uniqid("img-",true).".".$img_type_lc;
-            move_uploaded_file($tmpname,"uploads/".$new_img_name);
+            move_uploaded_file($tmpname,"../uploads/".$new_img_name);
             if($error==0)
             {
                 $sql="INSERT INTO Products(proid,proname,promrp,proprice,proqty,proimg,prosdes,prodes,promtitle,promdes,promkeywords)

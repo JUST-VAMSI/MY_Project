@@ -114,12 +114,14 @@ if((isset($_GET['sell'])) && isset($_SESSION['uname']))
           <?php
     if($result->num_rows>0)
     {
-      $connect=mysqli_connect("localhost","id20241156_root","Furniture@2662","id20241156_allinone");
-      $que="SELECT * FROM `add_address`";
-      $rest=mysqli_query($connect,$que);
+      $ss=$_SESSION['uname'];
+      $que="SELECT * FROM `add_address` WHERE email='$ss'";
+      $rest=mysqli_query($conn,$que);
+      if($rest->num_rows==1)
+      {
       while($row=mysqli_fetch_assoc($rest))
       {
-         if($row['email']==$_SESSION['uname'])
+         if($row['email']==$ss)
          {
           ?>
                  <div class="row rowone">
@@ -142,6 +144,7 @@ if((isset($_GET['sell'])) && isset($_SESSION['uname']))
          }
 
     }
+  }
   }
     }
   }?>

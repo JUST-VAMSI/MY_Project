@@ -4,7 +4,8 @@ session_start();
 include('db_conf.php');
 if(isset($_SESSION['uname']) && (isset($_GET['ac']) || isset($_GET['yes']) || isset($_GET['pro']) || isset($_GET['edchange']) || isset($_GET['cart'])))
 {
-    $q="SELECT * FROM `add_address`";
+    $uname=$_SESSION['uname'];
+    $q="SELECT * FROM `add_address` WHERE email='$uname'";
     $result=mysqli_query($conn,$q);
     if($result)
     {
@@ -195,7 +196,7 @@ if(isset($_SESSION['uname']) && (isset($_GET['ac']) || isset($_GET['yes']) || is
           </nav>
           <?php
       // $connect=mysqli_connect("localhost","id20241156_root","Furniture@2662","id20241156_allinone");
-      $uname=$_SESSION['uname'];
+      
       $que="SELECT * FROM `add_address` WHERE email='$uname'";
       $rest=mysqli_query($conn,$que);
       $qur="SELECT * FROM `cart`";
@@ -204,7 +205,7 @@ if(isset($_SESSION['uname']) && (isset($_GET['ac']) || isset($_GET['yes']) || is
        {
       while($row=mysqli_fetch_assoc($rest))
       {
-         if($row['email']==$_SESSION['uname'])
+         if($row['email']==$uname)
          {
           ?>
                  <div class="row rowone">
@@ -225,7 +226,7 @@ if(isset($_SESSION['uname']) && (isset($_GET['ac']) || isset($_GET['yes']) || is
        $p=0;
        while($rw=mysqli_fetch_assoc($result))
       {
-        if($rw['email']==$_SESSION['uname'])
+        if($rw['email']==$uname)
         {
            while($row=mysqli_fetch_assoc($res))
            {
@@ -233,7 +234,7 @@ if(isset($_SESSION['uname']) && (isset($_GET['ac']) || isset($_GET['yes']) || is
               {?>
                 <div class="row rowmiddle">
                 <div class="col-lg-6 col-sm-6 col-xs-6">
-                     <img src="<?php echo $row['proimg']?>" alt="..." height="300px" width="250px">
+                     <img src="uploads/<?php echo $row['proimg']?>" alt="..." height="300px" width="250px">
                  </div>
                   <div class="col-lg-6 col-sm-6 col-xs-6 colone">
                     <h4 class="fw-bold"><?= $row['proname']; ?></h4>

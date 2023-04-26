@@ -204,7 +204,7 @@ input[type="checkbox"],input[type="radio"]{
 </style> -->
     </head>
 <body class="text-center">
-    <form  action="productinsert-code.php" method="post" class="text-center" encytype="multipart/form-data" id="product">
+    <form  action="productinsert-code.php" method="post" class="text-center"  id="product" enctype="multipart/form-data">
         <div class="container">
             <h1 class="end">PRODUCT INSERT FORM</h1>
             <div class="row">

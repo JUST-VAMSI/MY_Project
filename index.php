@@ -246,19 +246,19 @@ elseif(!isset($_SESSION['uname']))
 </div>
 <div class="carousel-inner">
 <div class="carousel-item active">
-<img src="dainnet3-transformed.jpeg" class="d-block" alt="..." aspect-ratio="1280/720" height="500px" width="100%">
+<img src="sliderimages/dainnet3-transformed.jpeg" class="d-block" alt="..." aspect-ratio="1280/720" height="500px" width="100%">
 </div>
 <div class="carousel-item">
-<img src="cotnet1.jpg" class="d-block" alt="..." aspect-ratio="1500/1000" height="500px" width="100%">
+<img src="sliderimages/cotnet1.jpg" class="d-block" alt="..." aspect-ratio="1500/1000" height="500px" width="100%">
 </div>
 <div class="carousel-item">
-<img src="sofanet2.jpeg" class="d-block" alt="..." aspect-ratio="1280/698" height="500px" width="100%">
+<img src="sliderimages/sofanet2.jpeg" class="d-block" alt="..." aspect-ratio="1280/698" height="500px" width="100%">
 </div>
 <div class="carousel-item">
-<img src="c7.jpg" class="d-block" alt="..." aspect-ratio="1802/1200" height="500px" width="100%">
+<img src="sliderimages/c7.jpg" class="d-block" alt="..." aspect-ratio="1802/1200" height="500px" width="100%">
 </div>
 <div class="carousel-item">
-<img src="pexels-tirachard-kumtanom-887822.jpg" class="d-block" alt="..." aspect-ratio="5472/3648" height="500px" width="100%">
+<img src="sliderimages/pexels-tirachard-kumtanom-887822.jpg" class="d-block" alt="..." aspect-ratio="5472/3648" height="500px" width="100%">
 </div>
 </div>
 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
