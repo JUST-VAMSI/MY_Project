@@ -49,7 +49,7 @@ session_start();
         {
         ?>
         <body class="text-center text-sm-center">
-            <img src="order.gif" alt="" width="250px" height="200px">
+            <img src="images/order.gif" alt="" width="250px" height="200px">
             <h1>order success</h1>
             <div class="container-fluid">
                 <a href="index.php" aria-current="page"><button class="buttonshopping"><i class="bi bi-cart-check-fill"></i>Continue shopping</button></a>

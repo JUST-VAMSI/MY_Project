@@ -287,7 +287,7 @@ if(isset($_SESSION['uname']) && (isset($_GET['ac']) || isset($_GET['yes']) || is
     </head>
     <body class="text-center">
         <div class="container-fluid">
-                <img src="cart.gif" alt=".." width="300px" height="300px">
+                <img src="images/cart.gif" alt=".." width="300px" height="300px">
                 <h6 class="head6">Your Cart Is empty!</h6>
                 <a href="index.php" aria-current="page"><button class="buttonshop"><i class="bi bi-cart-check-fill me-2"></i>Shop Now</button></a>
                 </div>
