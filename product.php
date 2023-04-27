@@ -186,7 +186,7 @@
           
           <div class="row onerow">
             <div class="col-lg-6 col-sm-12">
-              <img src= '<?= $row['proimg'] ?>' width="500px" height="600px" class="im">
+              <img src= 'uploads/<?= $row['proimg'] ?>' width="500px" height="600px" class="im">
             </div>
             <div class="col-lg-6 col-sm-12">
               <h1 class="he"><?= $row['proname'] ?></h1>
