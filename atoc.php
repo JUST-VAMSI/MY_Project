@@ -15,6 +15,11 @@ if(isset($_SESSION['uname']) && (isset($_GET['ac']) || isset($_GET['yes']) || is
     ?>
     <html>
                 <head>
+                <meta charset="UTF-8">
+                <meta name="description" content="It is the website for booking home necessaries like cots, doors, dining tables, sofa's,etc.Our website is for you to get a good wood products.">
+                <meta name="keywords" content="furnitureallinone1439,furnitureallinone,FURNITUREALLINONE1439,furniture,wood products,furnitureall">
+                <meta name="author" content="vamsi veeramalla">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
                 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
@@ -51,7 +56,7 @@ if(isset($_SESSION['uname']) && (isset($_GET['ac']) || isset($_GET['yes']) || is
                     border:none;
                     border-radius:5px;
                     height:60%;
-                    width:30%;
+                    width:20%;
                     float:right;
                   } 
                   .rowmiddle{
@@ -59,26 +64,26 @@ if(isset($_SESSION['uname']) && (isset($_GET['ac']) || isset($_GET['yes']) || is
                     border-radius:5px;
                     background-color:white;
                   }
-                  .row .col-lg-6 img{
+                  .d-flex .col-lg-6 img{
                     margin:2% 0%;
                     box-shadow:2px 2px 4px 4px rgba(0,0,0,0.1);
                     border-radius:5px;
                     
                   }
-                  .row .col-lg-6 img:hover{
+                  .d-flex .col-lg-6 img:hover{
                     transform:scale(1.06);
                     transition-duration:.2s;
                   }
-                  .row .colone{
+                  .d-flex .colone{
                     margin:2% 0%;
                   }
-                  .row .col-lg-6 .left{
+                  .d-flex .col-lg-6 .left{
                     float:left;
                   }
-                  .row .colone p{
+                  .d-flex .colone p{
                     font-size:30px;
                   }
-                  .row .colone .no{
+                  .d-flex .colone .no{
                     font-size:25px;
                   }
                   .buttonremove{
@@ -86,9 +91,9 @@ if(isset($_SESSION['uname']) && (isset($_GET['ac']) || isset($_GET['yes']) || is
                     background-color:red;
                     border:none;
                     border-radius:5px;
-                    width:20%;
+                    width:30%;
                     height:130%;
-                    font-size:25px;
+                    font-size:20px;
                   }
                   .rowtwo{
                     margin:3% 0%;
@@ -113,76 +118,87 @@ if(isset($_SESSION['uname']) && (isset($_GET['ac']) || isset($_GET['yes']) || is
                   .bi-list{
                       display:inline-block;
                       color:#fff;
-                      font-size:60px;
+                      font-size:40px;
                       margin-left:5%;
                     }
                     .nav-link,.ic{
-                      font-size:40px;
+                      font-size:20px;
                     }
                   .container-fluid{
                     justify-content:center;
-                    margin-top:60%;
+                    margin-top:40%;
                   }
                   .head6,.buttonshop{
-                    font-size:40px;
+                    font-size:20px;
                   }
                   .buttonshop{
                     width:40%;
                     height:6%;
                   }
                   .buttonedit{
-                    width:40%;
-                    height:40%;
-                    font-size:40px;
+                    width:130%;
+                    height:50%;
+                    font-size:15px;
                   } 
                   .rowone{
-                    height:20%;
-                    font-size:30px;
+                    margin:0%;
+                    height:auto;
                     padding-top:10%;
-                    padding-bottom:20%;
                   }
-                  .row .col-lg-6 img{
+                  .d-flex .col-lg-6{
+                    padding:5%;
+                  }
+                  .rowone .col-lg-6 p{
+                    font-size:15px;
+                  }
+                  .d-flex .col-lg-6 img{
                     margin:5% 0%;
-                    width:300px;
-                    height:500px;
+                    width:150px;
+                    height:200px;
                   }
-                  .row .colone{
+                  .d-flex .colone{
                     margin:5% 0%;
                   }
-                  .row .colone p{
-                    font-size:40px;
+                  .d-flex .colone p{
+                    font-size:15px;
                   }
-                  .row .colone h4{
-                    font-size:50px;
+                  .d-flex .colone .no{
+                    font-size:15px;
+                  }
+                  .d-flex .colone h4{
+                    font-size:15px;
                   }
                   .buttonremove{
-                    width:40%;
-                    height:130%;
-                    font-size:40px;
+                    width:100%;
+                    height:120%;
+                    font-size:20px;
                   }
                   .rowtwo{
-                    height:10%;
                     position:sticky;
                     bottom:0;
                   }
                   .rowtwo .col-lg-6 h2{
-                    font-size:40px;
+                    font-size:20px;
                     margin:5% 0%;
                   }
                   .buttonplaceorder{
                     
-                    height:90%;
-                    width:70%;
+                    height:100%;
+                    width:100%;
                     border-radius:5px;
-                    font-size:40px;
+                    font-size:20px;
                     margin-bottom:2%;
 
+                  }
+                  .cartimg{
+                    height:200px;
+                    width:200px;
                   }
                  }
                   </style>
                 </head>
                 <body class="text-center text-sm-center" style="background-color:#f0f0f0;">
-                <nav class="navbar navbar-expand-lg navbar-dark bg-primary mt-2 fw-bold text-center text-sm-center sticky-top"> 
+                <nav class="navbar navbar-expand-lg navbar-dark bg-primary fw-bold text-center text-sm-center sticky-top"> 
                   <button class="navbar-toggler">
                   <i class="bi bi-list" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"></i>
                   </button>
@@ -208,7 +224,7 @@ if(isset($_SESSION['uname']) && (isset($_GET['ac']) || isset($_GET['yes']) || is
          if($row['email']==$uname)
          {
           ?>
-                 <div class="row rowone">
+                 <div class="d-flex rowone" >
                    <div class="col-lg-6 col-sm-6">
                        <p><b>Delivery to : </b><?= $row['fullname'].", ".$row['mobile'].", ".$row['pincode'].", ".$row['states'].", ".$row['house'].", ".$row['roadname']?></p>
                    </div>
@@ -232,7 +248,7 @@ if(isset($_SESSION['uname']) && (isset($_GET['ac']) || isset($_GET['yes']) || is
            {
               if($row['email']==$rw['email'])
               {?>
-                <div class="row rowmiddle">
+                <div class="d-flex rowmiddle">
                 <div class="col-lg-6 col-sm-6 col-xs-6">
                      <img src="uploads/<?php echo $row['proimg']?>" alt="..." height="300px" width="250px">
                  </div>
@@ -240,7 +256,7 @@ if(isset($_SESSION['uname']) && (isset($_GET['ac']) || isset($_GET['yes']) || is
                     <h4 class="fw-bold"><?= $row['proname']; ?></h4>
                     <hr>
                     <p><?= $row['prodes'] ?></p>
-                    <div class="row">
+                    <div class="d-flex">
                       <div class="col-lg-6 col-sm-6 col-xs-6">
                       <s><P class="text-danger no"><?= $row['promrp'] ?></P></s>
                       </div>
@@ -248,9 +264,11 @@ if(isset($_SESSION['uname']) && (isset($_GET['ac']) || isset($_GET['yes']) || is
                         <P class="left"><i class="bi bi-currency-rupee"></i><span class="text-success"><?= $row['proprice'] ?></span></P>
                       </div>
                     </div>
-                    <div class="row">
+                    <div class="d-flex">
+                      <div class="col-lg-12">
                       <a href="del.php?dele=<?= $row['proname'] ?>">
                       <button class="buttonremove">Remove</button></a>
+                      </div>
                     </div>
                   </div>
               </div>
@@ -265,7 +283,7 @@ if(isset($_SESSION['uname']) && (isset($_GET['ac']) || isset($_GET['yes']) || is
         
       }
       ?>
-          <div class="row rowtwo">
+          <div class="d-flex rowtwo">
           <div class="col-lg-6 col-sm-6 col-xs-6">
             <h2>Total: <?php echo $p ?></h2>
         </div>
@@ -287,7 +305,7 @@ if(isset($_SESSION['uname']) && (isset($_GET['ac']) || isset($_GET['yes']) || is
     </head>
     <body class="text-center">
         <div class="container-fluid">
-                <img src="images/cart.gif" alt=".." width="300px" height="300px">
+                <img src="images/cart.gif" alt=".." width="300px" height="300px" class="cartimg">
                 <h6 class="head6">Your Cart Is empty!</h6>
                 <a href="index.php" aria-current="page"><button class="buttonshop"><i class="bi bi-cart-check-fill me-2"></i>Shop Now</button></a>
                 </div>
