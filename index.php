@@ -16,6 +16,11 @@ include("db_conf.php");
     <!DOCTYPE html>
     <html>
     <head>
+    <meta charset="UTF-8">
+  <meta name="description" content="It is the website for booking home necessaries like cots, doors, dining tables, sofa's,etc.Our website is for you to get a good wood products.">
+  <meta name="keywords" content="furnitureallinone1439,furnitureallinone,FURNITUREALLINONE1439,furniture,wood products,furnitureall">
+  <meta name="author" content="vamsi veeramalla">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="google-site-verification" content="1EW1Lqyf73NVRyMCCrt88N150Yoxj2ySHyAmVaEaRx0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -30,6 +35,9 @@ include("db_conf.php");
       {
         font-family:italic;
       }
+       .navbar-toggler-icon{
+        display:none;
+       }
       .mainhead
       {
         color: white;
@@ -80,9 +88,6 @@ include("db_conf.php");
       .onecol div{
         margin-top:5%;
       }
-      .twocol2 div{
-        margin-top:2.8%;
-      }
       .insta{
         background-image: linear-gradient(
           to bottom right,
@@ -106,56 +111,68 @@ include("db_conf.php");
         color:#4183c4;
         background-color:white;
       }
+      pre{
+        margin-left:5%;
+        margin-top:5%;
+        font-size:20px;
+      }
       @media only screen and (max-width:1000px)
       {
        .mainhead,.h{
-          font-size:50px;
+          font-size:30px;
         }
         .head{
-          font-size:45px;
+          font-size:25px;
         }
         .nav-link,.dropdown-item,.ic{
-          font-size:40px;
+          font-size:20px;
+        }
+        .carousel-item img{
+          height:200px;
         }
       .rowone .col-sm-6{
-          width:440px;
+          width:150px;
       }
         .col-sm-6 img{
-          width:300px;
-          height:300px;
-          margin-top:5%;
+          width:100px;
+          height:100px;
+          margin-top:3%;
         }
         .col-sm-6 .card-title{
-          margin-top:4%;
-          font-size:30px;
+          margin-top:2%;
+          font-size:10px;
         }
         .col-sm-6 .card-text{
-          font-size:30px;
+          font-size:13px;
         }
         .col-sm-6 .btn-warning{
-          font-size:30px;
+          font-size:10px;
         }
         .contactrow h1{
-          font-size:40px;
+          font-size:20px;
         }
-        .contactrow .col-lg-3 h6, .contactrow .col-lg-5 h6{
-          font-size:25px;
+        .contactrow pre{
+          font-size:10px;
         }
         .map{
           display:none;
         }
         .swiper-slide img {
-          width: 250px;
-          height: 200px;
+          width: 80px;
+          height: 50px;
         }
         .swiper-slide{
-          padding:4%;
+          padding:3%;
         }
         .gal{
-          font-size:40px;
+          font-size:20px;
         }
-        .bi-file-person{
-            font-size:40px;
+        .navbar-toggler-icon{
+          display:inline-block;
+          font-size:25px;
+        }
+        .bi-star-fill,.bi-star{
+          font-size:8px;
         }
       }
     </style>
@@ -183,8 +200,8 @@ if(isset($_SESSION['uname']))
 <?php
 }
 ?>
-<button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-<span class="navbar-toggler-icon"  style="color:#fff;font-size:60px;">   
+<button class="text-light bg-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon">   
                  <i class="bi bi-list"></i> 
               </span>
 </button>
@@ -362,28 +379,18 @@ elseif(!isset($_SESSION['uname']))
 <footer class="sticky-bottom text-center text-sm-center" style="background-color: rgba(0, 0, 0, 0.2)">
   <section>
     <div class="row contactrow">
-      <h1 id="contactus">CONTACT US</h1>
-      <div class="col-lg-3 col-sm-3 onecol">
-       <div><h6><b>NAME:</b></h6></div>
-       <div><h6><b>S/O:</b></h6></div>
-       <div><h6><b>EMAIL:</b></h6></div>
-       <div><h6><b>MOBILE NO.:</b></h6></div>
-       <div><h6><b>WORK EXPC:</b></h6></div>
-       <div><h6><b>VILLAGE:</b></h6></div>
-       <div><h6><b>DISTRICT:</b></h6></div>
-       <div><h6><b>STATE:</b></h6></div>
+      <h1 id="contactus"><b> CONTACT US</b></h1>
+      <div class="col-lg-8 col-sm-12 onecol">
+       <pre><b> NAME               :  VEERAMALLA SATHIBABU</b>
+<b> S/O                    :  VEERAMALLA SIVAYYA</b>
+<b> EMAIL             :   vsathibabuvsathibabu51@gmail.com</b>
+<b> MOBILE NO.  :  9912691390</b>
+<b> WORK EXPC :  35 YEARS</b>
+<b> VILLAGE        : GANDEPALLI</b>
+<b> DISTRICT       : KAKINADA</b>
+<b> STATE              : A.P</b></pre>
       </div>
-      <div class="col-lg-5 col-sm-5 twocol2">
-       <div><h6>VEERAMALLA SATHIBABU</h6></div>
-       <div><h6>VEERAMALLA SIVAYYA</h6></div>
-       <div><h6>vsathibabuvsathibabu51@gmail.com</h6></div>
-       <div><h6>9912691390</h6></div>
-       <div><h6>35 YEARS</h6></div>
-       <div><h6>GANDEPALLI</h6></div>
-       <div><h6>KAKINADA</h6></div>
-       <div><h6>A.P</h6></div>
-      </div>
-      <div class="col-lg-4 col-sm-4 map">
+      <div class="col-lg-4 map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15250.594835326598!2d81.9545959283756!3d17.138626666580894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a37764a2a71c0cf%3A0x81a52f7cb9a3d0db!2sGandepalli%2C%20Andhra%20Pradesh%20533297!5e0!3m2!1sen!2sin!4v1673936603208!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
       </div>
