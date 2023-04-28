@@ -14,6 +14,11 @@
     ?>
     <html>
   <head>
+    <meta charset="UTF-8">
+  <meta name="description" content="It is the website for booking home necessaries like cots, doors, dining tables, sofa's,etc.Our website is for you to get a good wood products.">
+  <meta name="keywords" content="furnitureallinone1439,furnitureallinone,FURNITUREALLINONE1439,furniture,wood products,furnitureall">
+  <meta name="author" content="vamsi veeramalla">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
@@ -21,9 +26,6 @@
 <style>
  .bi-list{
   display:none;
- }
- .row{
-  width:100%;
  }
   .home{
     margin:0% 5%;
@@ -87,79 +89,85 @@
     border:gold;
     border-radius:5px;
   }
-  .sticky{
+  .magic{
     position:sticky;
     bottom:0;
+  }
+  .sticky{
+    display:none;
   }
   .button1:hover,.button2:hover{
     transform:scale(1.06);
     transition-duration:0.2s;
   }
-  .fot{
-    margin-top:100%;
-  }
+  
   @media only screen and (max-width:1000px)
   {
       .onerow{
-        height:100%;
+        height:auto;
       }
       .row{
-        width:100%;
+        width:auto;
       }
       .bi-list{
           display:inline-block;
           color:#fff;
-          font-size:60px;
-          margin-left:5%;
-        }
-        .nav-link,.ic{
           font-size:40px;
         }
+        .nav-link,.ic{
+          font-size:20px;
+        }
         .col-lg-6 img{
-          width:950px;
-          height:1000px;
+          width:280px;
+          height:400px;
         }
         .he{
-          font-size:50px;
+          font-size:20px;
         }
         .rowdiv{
-          height:15%;
-          width:100%;
+          width:auto;
+          height:14%;
           border-radius:10px;
         }
         .rowdiv .col-lg-4 .hp{
-          font-size:50px;
-          margin:18% 0%;
+          font-size:20px;
+          margin-top:7%;
+          margin-left:-20%;
         }
         .rowdiv .col-lg-8 .hp{
-          font-size:50px;
-          margin:9% 0%;
+          font-size:20px;
+          margin-top:-16%;
+          margin-left:50%;
         }
         .hpi{
-          font-size:40px;
-          margin-left:3%;
+          font-size:20px;
+          margin-left:1%;
         }
         .hpii{
-          font-size:40px;
-          margin-left:3%;
+          font-size:20px;
+          margin-left:1%;
         }
         .hpi1{
-          font-size:30px;
-          margin-left:5%;
+          font-size:15px;
+          margin-left:3%;
+        }
+        .magic{
+          display:none;
         }
         .sticky{
+          display:inline-block;
           position:sticky;
           bottom:0;
         }
         .button1{
-          font-size:50px;
-          height:80%;
-          width:100%;
+          font-size:20px;
+          height:50%;
+          width:auto;
         }
         .button2{
-          font-size:50px;
-          height:80%;
-          width:100%;
+          font-size:20px;
+          height:50%;
+          width:auto;
         }
   }
   </style>
@@ -231,13 +239,18 @@
               </div>
             </div>
             </div>
+            <div class="row magic">
+              <div class="col-lg-6">
+                 <a href="add_address.php?car=<?= $row['proname']?>"><button class="button1"><i class="bi bi-cart-check-fill me-2"></i>Add to Cart</button></a>
+              </div>
+              <div class="col-lg-6">
+                <a href="add_address.php?sell=<?= $row['proname']?>"><button class="button2">BUY NOW</button></a>
+              </div>
+            </div>
             <div class="row sticky">
-                <div class="col-lg-6 col-sm-6">
-                  <a href="add_address.php?car=<?= $row['proname']?>"><button class="button1"><i class="bi bi-cart-check-fill me-2"></i>Add to Cart</button></a>
-                </div>
-                <div class="col-lg-6 col-sm-6">
-                  <a href="add_address.php?sell=<?= $row['proname']?>"><button class="button2">BUY NOW</button></a>
-                </div>
+                <pre>
+  <a href="add_address.php?car=<?= $row['proname']?>"><button class="button1"><i class="bi bi-cart-check-fill me-2"></i>Add to Cart</button></a>   <a href="add_address.php?sell=<?= $row['proname']?>"><button class="button2">   BUY NOW    </button></a>
+                </pre>
           </div>
           </div>
              <?php
