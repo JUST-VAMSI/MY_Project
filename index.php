@@ -161,6 +161,9 @@ include("db_conf.php");
           width: 80px;
           height: 50px;
         }
+        .swiper-slide h1{
+          font-size:10px;
+        }
         .swiper-slide{
           padding:3%;
         }
