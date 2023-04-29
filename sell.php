@@ -8,6 +8,11 @@ if((isset($_GET['yessell']) || isset($_GET['atocsell'])) && isset($_SESSION['una
     ?>
     <html>
         <head>
+        <meta charset="UTF-8">
+                <meta name="description" content="It is the website for booking home necessaries like cots, doors, dining tables, sofa's,etc.Our website is for you to get a good wood products.">
+                <meta name="keywords" content="furnitureallinone1439,furnitureallinone,FURNITUREALLINONE1439,furniture,wood products,furnitureall">
+                <meta name="author" content="vamsi veeramalla">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
@@ -32,10 +37,10 @@ if((isset($_GET['yessell']) || isset($_GET['atocsell'])) && isset($_SESSION['una
           .container{
             margin-top:10%;
           }
-          .head4{
+          /* .head4{
             margin-top:4%;
             color:red;
-          }
+          } */
           .container h1{
             color:green;
           }
@@ -72,20 +77,22 @@ if((isset($_GET['yessell']) || isset($_GET['atocsell'])) && isset($_SESSION['una
             .bi-list{
                   display:inline-block;
                   color:#fff;
-                  font-size:60px;
-                  margin-left:5%;
+                  font-size:35px;
                 }
             .nav-link,.ic{
-                  font-size:40px;
+                  font-size:20px;
                 }
                 .container{
                   margin-top:40%;
                 }
-                .head4{
-                  font-size:40px;
+                /* .head4{
+                  font-size:20px;
+                } */
+                label{
+                  font-size:20px;
                 }
                 .container h1{
-                  font-size:50px;
+                  font-size:30px;
                 }
                 /* input[type="number"]{
                   width:50%;
@@ -95,10 +102,16 @@ if((isset($_GET['yessell']) || isset($_GET['atocsell'])) && isset($_SESSION['una
                 input[type="submit"]{
                   width:30%;
                   height:5%;
-                  font-size:40px;
+                  font-size:20px;
                 }
                 input[type="number"],input[type="submit"]{
                   margin-top:4%;
+                }
+                input[type='radio']
+                {
+                  accent-color:cyan; 
+                  height:15px;
+                  width:15px;
                 }
                 
           }
@@ -133,19 +146,19 @@ if((isset($_GET['yessell']) || isset($_GET['atocsell'])) && isset($_SESSION['una
               }
               ?>
             <form action="sellcheck.php?pp=<?= $ord ?>" method="post">
-               <pre><input type="radio" name="payment" value="cash on delivery" id="radiobut1" onclick="Radio()"><label> cash on delivery</label></pre></br>
-               <pre><input type="radio" name="payment" value="Online payment" id="radiobut2" onclick="Radio()"><label> Online payment</label></pre></br>
-               <input type="submit" name="sub" value="Place order" class="buttonsubmit">
+               <pre><input type="radio" name="payment" value="cash on delivery" id="radiobut1"><label> cash on delivery</label></pre></br>
+               <pre><input type="radio" name="payment" value="Online payment" id="radiobut2"><label> Online payment</label></pre></br>
+               <input type="submit" name="sub" value="Place order" class="buttonsubmit" onclick="return Radio()">
             </form>
             <?php
             }
             elseif(isset($_GET['atocsell']))
             { 
               ?>
-            <form action="sellcheck.php?addtoc='atoc'" method="post">
-            <pre><input type="radio" name="payment" value="cash on delivery" id="radiobut1" onclick="Radio()"><label> cash on delivery</label></pre></br>
-               <pre><input type="radio" name="payment" value="Online payment" id="radiobut2" onclick="Radio()"><label> Online payment</label></pre></br>
-               <input type="submit" name="sub" value="Place order" class="buttonsubmit">
+            <form action="sellcheck.php?addtoc='atoc'" method="post" onsubmit="return Radio();">
+            <pre><input type="radio" name="payment" value="cash on delivery" id="radiobut1"><label> cash on delivery</label></pre></br>
+               <pre><input type="radio" name="payment" value="Online payment" id="radiobut2"><label> Online payment</label></pre></br>
+               <input type="submit" name="sub" value="Place order" class="buttonsubmit" onclick="return Radio()">
             </form>
             <?php
             }
@@ -160,15 +173,19 @@ if((isset($_GET['yessell']) || isset($_GET['atocsell'])) && isset($_SESSION['una
 <script>
   function Radio()
         {
-            var v=document.getElementById("radiobut1").checked;
-            if(v==true)
+            const but1 =  document.querySelector("input[value='cash on delivery']");
+            const but2 =  document.querySelector("input[value='Online payment']");
+            
+            if(but1.checked)
             {
-                return true;
+              return true;
             }
-            var l=document.getElementById("radiobut2").checked;
-            if(l==true)
+            else if(but2.checked)
             {
-                return true;
+              return true;
+            }
+            else{
+              return false;
             }
         }
 </script>

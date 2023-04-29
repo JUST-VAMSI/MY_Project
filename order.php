@@ -12,6 +12,11 @@ if(isset($_SESSION['uname']) && isset($_GET['main']))
       ?>
        <html>
                 <head>
+                <meta charset="UTF-8">
+                <meta name="description" content="It is the website for booking home necessaries like cots, doors, dining tables, sofa's,etc.Our website is for you to get a good wood products.">
+                <meta name="keywords" content="furnitureallinone1439,furnitureallinone,FURNITUREALLINONE1439,furniture,wood products,furnitureall">
+                <meta name="author" content="vamsi veeramalla">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
                 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
@@ -76,34 +81,37 @@ if(isset($_SESSION['uname']) && isset($_GET['main']))
                     .bi-list{
                       display:inline-block;
                       color:#fff;
-                      font-size:60px;
-                      margin-left:5%;
+                      font-size:40px;
                     }
                     .nav-link{
-                      font-size:40px;
+                      font-size:25px;
                     }
                     .container-fluid h2{
-                      margin-top:80%;
-                      font-size:50px;
-                    }
-                    .container-fluid .buttonshop{
-                      width:40%;
-                      height:5%;
+                      margin-top:60%;
                       font-size:40px;
                     }
-                    .rowone h1{
-                      font-size:50px;
+                    .container-fluid .buttonshop{
+                      width:auto;
+                      height:auto;
+                      font-size:20px;
                     }
-                    .row .col-lg-6 img{
-                      margin:5% 0%;
-                      width:300px;
-                      height:450px;
+                    .rowone h1{
+                      margin:10px;
+                      font-size:20px;
+                    }
+                    .d-flex{
+                      padding:4%;
+                    }
+                    .d-flex .col-lg-6 img{
+                      /* margin:5% 0%; */
+                      width:150px;
+                      height:200px;
                       
                     }
                     .buttonview{
                       margin-top:20%;
-                      font-size:40px;
-                      width:60%;
+                      font-size:20px;
+                      width:80%;
                     }
                   }
                   </style>
@@ -129,9 +137,9 @@ if(isset($_SESSION['uname']) && isset($_GET['main']))
             {
                $got=1;
                ?>
-                  <div class="row rowone">
+                  <div class="d-flex rowone">
                         <div class="col-lg-6 col-sm-6 col-xs-6">
-                             <img src="<?php echo $row['oimg']?>" alt="..." height="300px" width="250px" style="border-radius:5px;">
+                             <img src="uploads/<?php echo $row['oimg']?>" alt="..." height="300px" width="250px" style="border-radius:5px;">
                         </div>
                         <div class="col-lg-6 col-sm-6 col-xs-6">
                             <h1 class="fw-bold"><?= $row['oname']; ?></h1>

@@ -13,6 +13,11 @@ if((isset($_GET['sell'])) && isset($_SESSION['uname']))
 ?>
  <html>
                 <head>
+                <meta charset="UTF-8">
+                <meta name="description" content="It is the website for booking home necessaries like cots, doors, dining tables, sofa's,etc.Our website is for you to get a good wood products.">
+                <meta name="keywords" content="furnitureallinone1439,furnitureallinone,FURNITUREALLINONE1439,furniture,wood products,furnitureall">
+                <meta name="author" content="vamsi veeramalla">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
                 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
@@ -26,10 +31,10 @@ if((isset($_GET['sell'])) && isset($_SESSION['uname']))
                   }
                   .rowone{
                     width:100%;
-                    height:20%;
+                    height:auto;
                     margin:2% 0%;
                     background-color:white;
-                    /* padding:3% 0%; */
+                    padding:0% 3%;
                     font-size:20px;
                   }
                   .buttonedit{
@@ -37,7 +42,7 @@ if((isset($_GET['sell'])) && isset($_SESSION['uname']))
                     background-color:lightpink;
                     border:none;
                     border-radius:5px;
-                    height:60%;
+                    height:auto;
                     width:30%;
                     float:right;
                     font-size:20px;
@@ -63,22 +68,24 @@ if((isset($_GET['sell'])) && isset($_SESSION['uname']))
                     .bi-list{
                     display:inline-block;
                     color:#fff;
-                    font-size:60px;
-                    margin-left:5%;
+                    font-size:35px;
                   }
                   .nav-link{
-                    font-size:40px;
+                    font-size:20px;
                   }
                   .buttonedit{
-                    width:40%;
-                    height:40%;
-                    font-size:40px;
+                    width:80px;
+                    height:40px;
+                    font-size:15px;
+                    margin-top:15px;
                   } 
                   .rowone{
-                    height:20%;
-                    font-size:30px;
-                    padding-top:10%;
-                    padding-bottom:20%;
+                    height:auto;
+                    font-size:20px;
+                    padding:0% 5%;
+                  }
+                  .rowone p{
+                    font-size:15px;
                   }
                   .rowtwo{
                     height:10%;
@@ -89,9 +96,9 @@ if((isset($_GET['sell'])) && isset($_SESSION['uname']))
                   .buttonplaceorder{
                     
                     height:80%;
-                    width:70%;
+                    width:100%;
                     border-radius:5px;
-                    font-size:40px;
+                    font-size:20px;
                     margin:2% 0%;
 
                   }
@@ -124,15 +131,15 @@ if((isset($_GET['sell'])) && isset($_SESSION['uname']))
          if($row['email']==$ss)
          {
           ?>
-                 <div class="row rowone">
+                 <div class="d-flex rowone">
                    <div class="col-lg-6 col-sm-6 mt-5 mb-5">
                    <p><b>Delivery to : </b><?= $row['fullname'].", ".$row['mobile'].", ".$row['pincode'].", ".$row['states'].", ".$row['house'].", ".$row['roadname']?></p>
                    </div>
                    <div class="col-lg-6 col-sm-6 mt-5 mb-5">
-                       <a href="add_address.php?edit='okk'"><button class="buttonedit">Edit</button></a>
+                       <a href="add_address.php?edit='okk'"><button class="buttonedit">Change</button></a>
                    </div>
                  </div>
-                 <div class="row rowtwo">
+                 <div class="d-flex rowtwo">
                    <div class="col-lg-12 col-sm-12 col-xs-12">
                        <a href="sell.php?yessell=<?= $pro ?>"><button class="buttonplaceorder">Place Order</button></a>
                    </div>

@@ -15,9 +15,9 @@ if(isset($_POST['sub']) && isset($_SESSION['uname']))
             else{
                 $p=$_GET['pp'];
                 $query="SELECT * FROM products";
-                $res=mysqli_query($con,$query);
+                $res=mysqli_query($conn,$query);
                 $qust="SELECT * FROM add_address";
-                $rrs=mysqli_query($con,$qust);
+                $rrs=mysqli_query($conn,$qust);
                 while($row=mysqli_fetch_assoc($rrs))
                 {
                     if($_SESSION['uname'] == $row['email'])
@@ -29,8 +29,8 @@ if(isset($_POST['sub']) && isset($_SESSION['uname']))
                             {
                                 $oname=$yes['proname'];
                                 $oimg=$yes['proimg'];
-                                $q="INSERT INTO orderpage VALUES('$em','$oname','$oimg')";
-                                mysqli_query($con,$q);
+                                $q="INSERT INTO orderpage(`email`,`oname`,`oimg`) VALUES('$em','$oname','$oimg')";
+                                mysqli_query($conn,$q);
                                 header("Location: conformorder.php?orderconfirm='yes'");
                             }
                         }
@@ -45,13 +45,13 @@ if(isset($_POST['sub']) && isset($_SESSION['uname']))
         {
             $u=$_SESSION['uname'];
             $detq="SELECT * FROM add_address";
-            $rest=mysqli_query($con,$detq);
+            $rest=mysqli_query($conn,$detq);
             while($row=mysqli_fetch_assoc($rest))
             {
                 if($u == $row['email'])
                 {
                     $qu="SELECT * FROM cart";
-                    $res1=mysqli_query($con,$qu);
+                    $res1=mysqli_query($conn,$qu);
                     while($rem=mysqli_fetch_assoc($res1))
                     {
                         if($row['email'] == $rem['email'])
@@ -59,8 +59,8 @@ if(isset($_POST['sub']) && isset($_SESSION['uname']))
                             $ema=$row['email'];
                             $oname=$rem['proname'];
                             $oimg=$rem['proimg'];
-                            $q="INSERT INTO orderpage VALUES('$ema','$oname','$oimg')";
-                            mysqli_query($con,$q);
+                            $q="INSERT INTO orderpage(`email`,`oname`,`oimg`) VALUES('$ema','$oname','$oimg')";
+                            mysqli_query($conn,$q);
                         }
                             
                     }
