@@ -148,7 +148,7 @@ input[type="checkbox"],input[type="radio"]{
                     <p class="hide">Email:</p>
                 </div>
                 <div class="col-lg-6 col-sm-12">
-                    <input type="email" onkeyup="Email();" id="emailname" name="Emailname" placeholder="@gmail.com">
+                    <input type="email" onkeydown="Email();" id="emailname" name="Emailname" placeholder="@gmail.com">
                 </div>
             </div>
             <div class="row">
@@ -231,17 +231,17 @@ input[type="checkbox"],input[type="radio"]{
         }
         function Email()
         {
-            var v=document.getElementById("emailname").value;
-            var reg=/^[a-z A-Z \d]+(@gmail.com)$/;
-            if(v.match(reg))
-            {
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            const email = document.getElementById("emailname").value;
+
+            if (emailRegex.test(email)) {
                 document.getElementById("emailname").style.border="2px solid green";
                 return true;
-            }
-            else{
+            } else {
                 document.getElementById("emailname").style.border="2px solid red";
                 return false;
             }
+
         }
 
         function Mobile()

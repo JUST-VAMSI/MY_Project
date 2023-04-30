@@ -1,5 +1,8 @@
 <?php
-$random=$_GET['random'];
+session_start();
+if(isset($_SESSION['changemail']) && isset($_SESSION['rand']))
+{
+
 ?>
 <html>
     <head>
@@ -64,7 +67,7 @@ $random=$_GET['random'];
     <body>
         <div class="container-fluid">
         <div><h1>Forgot Password</h1></div>
-        <form action="changesuccess.php?randd=<?php $random ?>" method="post">
+        <form action="changesuccess.php" method="post">
             <div class="d-flex">
                 <div class="col-lg-6 col-sm-12" >
                     <label for="email">OTP:</label>
@@ -74,12 +77,15 @@ $random=$_GET['random'];
                 </div>
             </div>
             <div>
-                <input type="email" name="gmail" value="<?php $_GET['mail'] ?>" hidden>
-            </div>
-            <div>
                 <input type="submit" value="Next" name="changepass">
             </div>
             </form>
         </div>
     </body>
 </html>
+<?php
+}
+else{
+    header("Location: login.php");
+}
+?>

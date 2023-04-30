@@ -1,8 +1,9 @@
 <?php
-if(isset($_POST['changepass']))
+session_start();
+if(isset($_POST['changepass']) && isset($_SESSION['changemail']))
 {
-    $check=$_GET['randd'];
-    $email=$_POST['mail'];
+    $check=$_SESSION['rand'];
+    $email=$_SESSION['changemail'];
     if($check==$_POST['otp'])
     {
         
@@ -69,7 +70,7 @@ if(isset($_POST['changepass']))
         <body>
             <div class="container-fluid">
             <div><h1>Forgot Password</h1></div>
-            <form action="changepasscheck.php?randd=<?php $random ?>" method="post">
+            <form action="changepasscheck.php" method="post" onsubmit="return all();">
                 <div class="d-flex">
                     <div class="col-lg-6 col-sm-12" >
                         <label for="newpass">new password:</label>
@@ -86,9 +87,6 @@ if(isset($_POST['changepass']))
                     <input type="text" name="repass" id="RePass" placeholder="re-enter password" onkeydown="repass();">
                 </div>
             </div>
-                <div>
-                <input type="email" value='."$email".' hidden name="mail" >
-             </div>
                 <div>
                     <input type="submit" value="Next" name="changesuccess">
                 </div>
@@ -125,13 +123,25 @@ if(isset($_POST['changepass']))
                 return false;
             }
         }
+        function all()
+        {
+            if(repass() && CPass())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         </script>
     </html>';
     }
     else{
+        $emrand=$email." ".$check;
         echo '<script>
-        alert("enter correct otp");
-        document.location.href="changepass.php?mail='.$email.'";
+        alert("Enter correct otp");
+        document.location.href="changepass.php?mail='.$emrand.'";
         </script>';
     }
 }

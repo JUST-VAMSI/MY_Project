@@ -1,4 +1,5 @@
 <?php
+session_start();
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -16,6 +17,8 @@ if(isset($_POST['change']))
     if($emres->num_rows==1)
     {
         $rand=rand(100,999);
+        $_SESSION['changemail']=$email;
+        $_SESSION['rand']=$rand;
         $mail = new PHPMailer(true);
 
             // Enable SMTP debugging
@@ -45,11 +48,20 @@ if(isset($_POST['change']))
                 echo 'Message could not be sent.';
                 echo 'Mailer Error: ' . $mail->ErrorInfo;
             } 
-            else {
+            else{
+                
                 echo '<script>
-                document.location.href="changepass.php?mail='.$email.'";
+                document.location.href="changepass.php";
                 </script>';
+               
          }
+    }
+    else{
+        echo '<script>
+        alert("email not exists!");
+        document.location.href="change.php";
+        </script>';
+
     }
 }
 ?>
