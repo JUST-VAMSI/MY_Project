@@ -90,13 +90,13 @@
     <body>
         <div class="container-fluid">
         <div><h1>Forgot Password</h1></div>
-        <form action="changecheck.php" method="post">
+        <form action="changecheck.php" method="post" onsubmit="return mail();">
             <div class="row">
                 <div class="col-lg-6 col-sm-12" >
                     <label for="email">Email:</label>
                 </div>
                 <div class="col-lg-6 col-sm-12" >
-                    <input type="email" name="email" placeholder="     @gmail.com">
+                    <input type="email" name="email" id="emailname" placeholder="     @gmail.com">
                 </div>
             </div>
             <div>
@@ -106,3 +106,18 @@
         </div>
     </body>
 </html>
+<script>
+    function mail()
+    {
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            const email = document.getElementById("emailname").value;
+
+            if (emailRegex.test(email)) {
+                document.getElementById("emailname").style.border="2px solid green";
+                return true;
+            } else {
+                document.getElementById("emailname").style.border="2px solid red";
+                return false;
+            }
+    }
+</script>
