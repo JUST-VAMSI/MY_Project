@@ -96,7 +96,7 @@
                     <label for="email">Email:</label>
                 </div>
                 <div class="col-lg-6 col-sm-12" >
-                    <input type="email" name="email" id="emailname" placeholder="     @gmail.com">
+                    <input type="email" name="email" id="emailname" placeholder="     @gmail.com" required>
                 </div>
             </div>
             <div>

@@ -101,7 +101,7 @@ if(isset($_SESSION['changemail']) && isset($_SESSION['rand']))
                     <label for="email">OTP:</label>
                 </div>
                 <div class="col-lg-6 col-sm-12" >
-                    <input type="number" name="otp" placeholder="OTP">
+                    <input type="number" name="otp" placeholder="OTP" required>
                 </div>
             </div>
             <div>
