@@ -38,7 +38,7 @@ if(isset($_SESSION['changemail']) && isset($_SESSION['rand']))
             margin-top:10%;
             padding:5%;
         }
-        .d-flex .col-lg-6{
+        .row .col-lg-6{
             margin-top:5%;
             text:center;
         }
@@ -62,13 +62,41 @@ if(isset($_SESSION['changemail']) && isset($_SESSION['rand']))
             color:white;
             border:none;
         }
+        @media only screen and (max-width:1000px)
+    {
+        .container-fluid{
+            margin-top:100px;
+           height:auto;
+           width:auto;
+        }
+        .row .col-lg-6{
+            margin-top:5%;
+            text:center;
+        }
+        label{
+           display:none;
+        }
+        input[type="email"]
+        {
+            font-size:20px;
+            width:100%;;
+            height:100%;
+        }
+        input[type="submit"]
+        {
+            font-size:20px;
+            width:20%;
+            height:5%;
+            
+        }
+    }
     </style>
     </head>
     <body>
         <div class="container-fluid">
         <div><h1>Forgot Password</h1></div>
         <form action="changesuccess.php" method="post">
-            <div class="d-flex">
+            <div class="row">
                 <div class="col-lg-6 col-sm-12" >
                     <label for="email">OTP:</label>
                 </div>

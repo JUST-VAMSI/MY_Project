@@ -26,43 +26,72 @@
         }
         .container-fluid{
             background-color:white;
-            height:300px;
-            width:800px;
+            height:auto;
+            width:900px;
             border-radius:10px;
             margin-top:10%;
             padding:5%;
         }
-        .d-flex .col-lg-6{
+        .row .col-lg-6{
             margin-top:5%;
             text:center;
         }
         label{
-            font-size:25px;
+            font-size:20px;
         }
         input[type="email"]
         {
-            font-size:25px;
-            float:left;
+            font-size:20px;
             width:100%;
         }
         input[type="submit"]
         {
             font-size:25px;
-            width:20%;
-            height:30%;
+            width:15%;
+            height:5%;
             border-radius:8px;
             margin-top:5%;
             background-color:green;
             color:white;
             border:none;
         }
+    @media only screen and (max-width:1000px)
+    {
+        .container-fluid{
+            margin-top:200px;
+           height:auto;
+           width:500px;
+        }
+        .d-flex .col-lg-6{
+            margin-top:5%;
+            text:center;
+        }
+        label{
+           display:none;
+        }
+        input[type="email"]
+        {
+            font-size:20px;
+            width:100%;;
+            height:100%;
+        }
+        input[type="submit"]
+        {
+            font-size:20px;
+            width:20%;
+            height:5%;
+            
+        }
+
+       
+    }
     </style>
     </head>
     <body>
         <div class="container-fluid">
         <div><h1>Forgot Password</h1></div>
         <form action="changecheck.php" method="post">
-            <div class="d-flex">
+            <div class="row">
                 <div class="col-lg-6 col-sm-12" >
                     <label for="email">Email:</label>
                 </div>

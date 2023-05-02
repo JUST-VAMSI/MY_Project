@@ -41,7 +41,7 @@ if(isset($_POST['changepass']) && isset($_SESSION['changemail']))
                 margin-top:10%;
                 padding:5%;
             }
-            .d-flex .col-lg-6{
+            .row .col-lg-6{
                 margin-top:5%;
                 text:center;
             }
@@ -65,26 +65,54 @@ if(isset($_POST['changepass']) && isset($_SESSION['changemail']))
                 color:white;
                 border:none;
             }
+            @media only screen and (max-width:1000px)
+            {
+                .container-fluid{
+                    margin-top:100px;
+                   height:auto;
+                   width:auto;
+                }
+                .row .col-lg-6{
+                    margin-top:5%;
+                    text:center;
+                }
+                label{
+                   display:none;
+                }
+                input[type="password"]
+                {
+                    font-size:20px;
+                    width:100%;;
+                    height:100%;
+                }
+                input[type="submit"]
+                {
+                    font-size:20px;
+                    width:auto;
+                    height:5%;
+                    
+                }
+            }
         </style>
         </head>
         <body>
             <div class="container-fluid">
             <div><h1>Forgot Password</h1></div>
             <form action="changepasscheck.php" method="post" onsubmit="return all();">
-                <div class="d-flex">
+                <div class="row">
                     <div class="col-lg-6 col-sm-12" >
                         <label for="newpass">new password:</label>
                     </div>
                     <div class="col-lg-6 col-sm-12" >
-                        <input type="text" name="newpass" id="CPass" placeholder="New password" onkeydown="Cpass();">
+                        <input type="password" name="newpass" id="CPass" placeholder="New password" onkeydown="Cpass();">
                     </div>
                 </div>
-                <div class="d-flex">
+                <div class="row">
                 <div class="col-lg-6 col-sm-12" >
                     <label for="pass">re-enter password:</label>
                 </div>
                 <div class="col-lg-6 col-sm-12" >
-                    <input type="text" name="repass" id="RePass" placeholder="re-enter password" onkeydown="repass();">
+                    <input type="password" name="repass" id="RePass" placeholder="re-enter password" onkeydown="repass();">
                 </div>
             </div>
                 <div>

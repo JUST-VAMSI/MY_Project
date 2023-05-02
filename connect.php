@@ -3,9 +3,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require 'sendfiles/src/Exception.php';
-require 'sendfiles/src/PHPMailer.php';
-require 'sendfiles/src/SMTP.php';
+require 'mailsender/sendfiles/src/Exception.php';
+require 'mailsender/sendfiles/src/PHPMailer.php';
+require 'mailsender/sendfiles/src/SMTP.php';
 // $conn=mysqli_connect("localhost","id20241156_root","Furniture@2662","id20241156_allinone");
 include("db_conf.php");
 
