@@ -48,7 +48,7 @@ if(isset($_POST['vamsi']))
             $mail->Subject = "Welcome to Furniture - Discover Exquisite Wood Furniture and Home Necessities";
 
             // Set the message body
-            $mail->Body = "Welcome to Furniture All In One! We are delighted that you have chosen to join our community of wood furniture enthusiasts and home decor lovers. As a registered member, you now have access to a world of beautiful and functional furniture crafted with the finest wood, designed to transform your living space into a warm and inviting home.";
+            $mail->Body = "Welcome to Furniture All In One! We are delighted that you have chosen to join our community of wood furniture enthusiasts and home decor lovers. As a registered member, you now have access to a world of beautiful and functional furniture crafted with the finest wood, designed to transform your living space into a warm and inviting home.Our website link https://furnitureallinone1439.000webhostapp.com/index.php";
 
             // Send the email
             if (!$mail->send()) {
