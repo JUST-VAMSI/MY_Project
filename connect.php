@@ -45,10 +45,10 @@ if(isset($_POST['vamsi']))
             // Set up the email headers, recipients, and subject
             $mail->setFrom('veeramallavamsi72@gmail.com');
             $mail->addAddress($email_name);
-            $mail->Subject = "Registration successful";
+            $mail->Subject = "Welcome to Furniture - Discover Exquisite Wood Furniture and Home Necessities";
 
             // Set the message body
-            $mail->Body = "Your registration is successfully for Furniture all in one. Here your favourite furniture is there for you! Please login to visit.";
+            $mail->Body = "Welcome to Furniture All In One! We are delighted that you have chosen to join our community of wood furniture enthusiasts and home decor lovers. As a registered member, you now have access to a world of beautiful and functional furniture crafted with the finest wood, designed to transform your living space into a warm and inviting home.";
 
             // Send the email
             if (!$mail->send()) {
