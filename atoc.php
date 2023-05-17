@@ -213,75 +213,75 @@ if(isset($_SESSION['uname']) && (isset($_GET['ac']) || isset($_GET['yes']) || is
           <?php
       // $connect=mysqli_connect("localhost","id20241156_root","Furniture@2662","id20241156_allinone");
       
-      $que="SELECT * FROM `add_address` WHERE email='$uname'";
+      $que="SELECT * FROM `cart` WHERE email='$uname'";
       $rest=mysqli_query($conn,$que);
       $qur="SELECT * FROM `cart`";
        $res=mysqli_query($conn,$qur);
        if(($res->num_rows>0) && ($rest->num_rows==1))
        {
-      while($row=mysqli_fetch_assoc($rest))
-      {
-         if($row['email']==$uname)
-         {
-          ?>
-                 <div class="d-flex rowone" >
-                   <div class="col-lg-6 col-sm-6">
-                       <p><b>Delivery to : </b><?= $row['fullname'].", ".$row['mobile'].", ".$row['pincode'].", ".$row['states'].", ".$row['house'].", ".$row['roadname']?></p>
-                   </div>
-                   <div class="col-lg-6 col-sm-6">
-                       <a href="add_address.php?edit='confirm'"><button class="buttonedit">Edit</button></a>
-                   </div>
-                 </div>
-             
-           
-      <?php
-         break;
-         }
-       }
-       
-       $p=0;
-       while($rw=mysqli_fetch_assoc($result))
-      {
-        if($rw['email']==$uname)
-        {
-           while($row=mysqli_fetch_assoc($res))
-           {
-              if($row['email']==$rw['email'])
-              {?>
-                <div class="d-flex rowmiddle">
-                <div class="col-lg-6 col-sm-6 col-xs-6">
-                     <img src="uploads/<?php echo $row['proimg']?>" alt="..." height="300px" width="250px">
-                 </div>
-                  <div class="col-lg-6 col-sm-6 col-xs-6 colone">
-                    <h4 class="fw-bold"><?= $row['proname']; ?></h4>
-                    <hr>
-                    <p><?= $row['prodes'] ?></p>
-                    <div class="d-flex">
-                      <div class="col-lg-6 col-sm-6 col-xs-6">
-                      <s><P class="text-danger no"><?= $row['promrp'] ?></P></s>
-                      </div>
-                      <div class="col-lg-6 col-sm-6 col-xs-6">
-                        <P class="left"><i class="bi bi-currency-rupee"></i><span class="text-success"><?= $row['proprice'] ?></span></P>
-                      </div>
-                    </div>
-                    <div class="d-flex">
-                      <div class="col-lg-12">
-                      <a href="del.php?dele=<?= $row['proname'] ?>">
-                      <button class="buttonremove">Remove</button></a>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-                <?php
-                    $p+=$row['proprice'];
-
-                
-        
+              while($row=mysqli_fetch_assoc($rest))
+              {
+                 if($row['email']==$uname)
+                 {
+                  ?>
+                         <div class="d-flex rowone" >
+                           <div class="col-lg-6 col-sm-6">
+                               <p><b>Delivery to : </b><?= $row['fullname'].", ".$row['mobile'].", ".$row['pincode'].", ".$row['states'].", ".$row['house'].", ".$row['roadname']?></p>
+                           </div>
+                           <div class="col-lg-6 col-sm-6">
+                               <a href="add_address.php?edit='confirm'"><button class="buttonedit">Edit</button></a>
+                           </div>
+                         </div>
+                     
+                   
+              <?php
+                 break;
+                 }
+               }
+               
+               $p=0;
+               while($rw=mysqli_fetch_assoc($result))
+              {
+                    if($rw['email']==$uname)
+                    {
+                       while($row=mysqli_fetch_assoc($res))
+                       {
+                          if($row['email']==$rw['email'])
+                          {?>
+                            <div class="d-flex rowmiddle">
+                            <div class="col-lg-6 col-sm-6 col-xs-6">
+                                 <img src="uploads/<?php echo $row['proimg']?>" alt="..." height="300px" width="250px">
+                             </div>
+                              <div class="col-lg-6 col-sm-6 col-xs-6 colone">
+                                <h4 class="fw-bold"><?= $row['proname']; ?></h4>
+                                <hr>
+                                <p><?= $row['prodes'] ?></p>
+                                <div class="d-flex">
+                                  <div class="col-lg-6 col-sm-6 col-xs-6">
+                                  <s><P class="text-danger no"><?= $row['promrp'] ?></P></s>
+                                  </div>
+                                  <div class="col-lg-6 col-sm-6 col-xs-6">
+                                    <P class="left"><i class="bi bi-currency-rupee"></i><span class="text-success"><?= $row['proprice'] ?></span></P>
+                                  </div>
+                                </div>
+                                <div class="d-flex">
+                                  <div class="col-lg-12">
+                                  <a href="del.php?dele=<?= $row['proname'] ?>">
+                                  <button class="buttonremove">Remove</button></a>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                            <?php
+                                $p+=$row['proprice'];
+            
+                            
+                    
+                          }
+                       }
+                    }
+                    
               }
-           }
-        }
-        
-      }
       ?>
           <div class="d-flex rowtwo">
           <div class="col-lg-6 col-sm-6 col-xs-6">
